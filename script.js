@@ -49,4 +49,10 @@ function loadHabits() {
     });
 }
 
-
+// Delete habit
+function deleteHabit(index) {
+    let habits = JSON.parse(localStorage.getItem("habits")) || [];
+    habits.splice(index, 1);
+    localStorage.setItem("habits", JSON.stringify(habits));
+    location.reload();
+}
